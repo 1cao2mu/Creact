@@ -31,14 +31,14 @@ const User = mongoose.model('user', new mongoose.Schema({
 app.listen(9093, () => {
     console.log("listen 9093");
 })
-app.get('/', (req, res) => {
+app.get('/data', (req, res) => {
     // User.updateMany({ username: "bbb" }, { "$set": { age: 100 } }, (err, doc) => {
     //     res.json(doc);
     // })
     // User.remove({ name: "aaa" }, (err, doc) => {
     //     res.json(doc);
     // })
-    User.find({},(err,doc)=>{
+    User.findOne({ username: "bbb" },(err,doc)=>{
         res.json(doc);
     })
     // res.json({ name: "危险流浪者", place: "香港" });
