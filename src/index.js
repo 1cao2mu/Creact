@@ -19,12 +19,16 @@ const store = createStore(reducers, compose(
 function Boss(){
 	return <h2>BOSS页面</h2>
 }
+function Genius(){
+	return <h2>牛人页面</h2>
+}
 ReactDom.render(
 	(<Provider store={store}>
 		<BrowserRouter>
 			<div>
 				<AuthRoute></AuthRoute>
-				<Route path='/boss' component={Boss}></Route>
+				<Route path='/bossinfo' component={Boss}></Route>
+				<Route path='/geniusinfo' component={Genius}></Route>
 				<Route path='/login' component={Login}></Route>
 				<Route path='/register' component={Register}></Route>
 			</div>
