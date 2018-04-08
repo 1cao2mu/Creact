@@ -5,12 +5,12 @@ import {Switch, Route} from 'react-router-dom'
 import NavLinkBar from '../navlink/navlink'
 import Boss from '../../component/boss/boss'
 import Genius from '../../component/genius/genius'
+import User from '../../component/user/user'
+
 function Msg(){
 	return <h2>消息列表页面</h2>
 }
-function User(){
-	return <h2>个人中心页面</h2>
-}
+
 @connect(
 	state=>state
 )
@@ -55,7 +55,7 @@ class Dashboard extends React.Component{
 
 		return (
 			<div>
-				<NavBar className='fixd-header' mode='dard'></NavBar>
+				<NavBar className='fixd-header' mode='dard'>{navList.find(v=>v.path==pathname).title}</NavBar>
 				<div style={{marginTop:45}}>
 						<Switch>
 							{navList.map(v=>(
